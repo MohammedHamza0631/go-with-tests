@@ -7,3 +7,13 @@ func Sum (numbers []int) int{
 	}
 	return sum
 }
+
+func SumAll(numbersToSum ...[]int) []int {
+	length := len(numbersToSum)
+
+	ans := make([]int, length)
+	for idx, numbers := range numbersToSum {
+		ans[idx] = Sum(numbers)
+	}
+	return ans
+}
